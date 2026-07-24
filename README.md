@@ -141,14 +141,12 @@ To balance feature delivery with system reliability, the following error budget 
 
 # Screenshots
 
-Add screenshots demonstrating:
+<img width="957" height="539" alt="Screenshot 2026-07-20 222602" src="https://github.com/user-attachments/assets/9c611440-f21a-4b92-a4b1-31266097d806" />
+<img width="958" height="535" alt="Screenshot 2026-07-21 210835" src="https://github.com/user-attachments/assets/974aa64e-cb55-41b1-b6a4-11c1f735b5a7" />
+<img width="959" height="539" alt="Screenshot 2026-07-21 211224" src="https://github.com/user-attachments/assets/80d9b62b-1f77-4993-8acd-84bf6088b9b8" />
+<img width="959" height="539" alt="Screenshot 2026-07-24 160818" src="https://github.com/user-attachments/assets/b01f18d9-e403-4a08-bf6c-b54e5ecdcdf1" />
+<img width="959" height="539" alt="Screenshot 2026-07-24 160916" src="https://github.com/user-attachments/assets/d04ef3fd-643d-4a30-9fb1-064bfe812c33" />
 
-- Grafana Infrastructure Dashboard
-- Prometheus Targets
-- Loki Log Explorer
-- Jaeger Trace View
-- Alertmanager Alerts
-- Docker Compose Services
 
 ---
 

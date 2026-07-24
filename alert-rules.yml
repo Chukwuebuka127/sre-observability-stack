@@ -1,0 +1,44 @@
+groups:
+  - name: slo-alerts
+    rules:
+
+      - alert: AvailabilitySLOAtRisk
+        expr: up{job="node_exporter"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Availability SLO at risk"
+          description: "Service down - 99.9% SLO being violated"
+
+      - alert: MemorySLOAtRisk
+        expr: |
+          (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)
+          / node_memory_MemTotal_bytes * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Memory SLO at risk"
+          description: "Memory above 85% threshold"
+
+      - alert: DiskSLOAtRisk
+        expr: |
+          (node_filesystem_size_bytes{mountpoint="/"} - node_filesystem_free_bytes{mountpoint="/"})
+          / node_filesystem_size_bytes{mountpoint="/"} * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Disk SLO at risk"
+          description: "Disk above 80% threshold"
+
+      - alert: CPUSLOAtRisk
+        expr: |
+          100 - (avg(irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 90
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU SLO at risk"
+          description: "CPU above 90% for 5 minutes”
